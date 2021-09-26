@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getDatabase, onValue, ref } from 'firebase/database';
+import { getDatabase, onValue, ref, set } from 'firebase/database';
 import {useState, useEffect} from 'react'
 
 const firebaseConfig = {
@@ -15,6 +15,10 @@ const firebaseConfig = {
 
 const firebase = initializeApp(firebaseConfig);
 const database = getDatabase(firebase);
+
+export const setData = (path, value) => (
+    set(ref(database, path), value)
+);
 
 export const useData = (path, transform) => {
     const [data, setData] = useState();

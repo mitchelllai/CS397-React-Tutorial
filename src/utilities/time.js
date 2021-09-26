@@ -60,4 +60,4 @@ const hasConflict = (course, selected) => (
     selected.some(selection => courseConflict(course, selection))
 );
 
-export {hasConflict, getCourseNumber, getCourseTerm, addScheduleTimes, toggle, terms}
+export {hasConflict, getCourseNumber, getCourseTerm, addScheduleTimes, toggle, timeParts, terms}
